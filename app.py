@@ -20,7 +20,7 @@ cities = ['Ahmedabad', 'Kolkata', 'Mumbai', 'Pune', 'Navi Mumbai', 'Dubai',
        'Johannesburg', 'Centurion', 'Durban', 'Bloemfontein',
        'Port Elizabeth', 'Kimberley', 'East London', 'Cape Town']
 
-pipe = pickle.load(open('pipee.pkl','rb'))
+pipe = pickle.load(open('pipe.pkl','rb'))
 
 st.title('IPL Win Predictor')
 

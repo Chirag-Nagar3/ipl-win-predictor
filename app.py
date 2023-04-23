@@ -22,7 +22,7 @@ cities = ['Ahmedabad', 'Kolkata', 'Mumbai', 'Pune', 'Navi Mumbai', 'Dubai',
 
 pipe = pickle.load(open('pipe11.pkl','rb'))
 
-st.title('IPL Win Predictor')
+st.title('IPL Win Probability')
 
 col1, col2 = st.columns(2)
 

@@ -12,10 +12,10 @@ cities = ['Ahmedabad', 'Kolkata', 'Mumbai', 'Pune', 'Navi Mumbai', 'Dubai',
        'Port Elizabeth', 'Kimberley', 'East London', 'Cape Town']
 
 # Define the API endpoint
-url = "https://api.cricapi.com/v1/currentMatches?apikey=ed0c1e0f-6124-4c8a-bebc-408c8337df93&offset=0"
+url = "https://api.cricapi.com/v1/currentMatches?apikey=889bafcf-96c9-4cad-bf6c-d9b8ab3184a3&offset=0"
 
 headers = {
-    "apikey": "ed0c1e0f-6124-4c8a-bebc-408c8337df93"
+    "apikey": "889bafcf-96c9-4cad-bf6c-d9b8ab3184a3"
 }
 
 # Make the API request

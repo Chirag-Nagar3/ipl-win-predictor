@@ -24,7 +24,7 @@ response = requests.get(url, headers=headers)
 data = response.json()
 
 myId = "b72aa256-3a2f-4536-bb4f-59cdebf04557"
-permission  = "yes"
+permission  = "no"
 match_id = data['data'][4]['id']
 match_name = data['data'][4]['name']
 match_city = data['data'][4]['venue']

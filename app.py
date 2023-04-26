@@ -24,7 +24,7 @@ response = requests.get(url, headers=headers)
 data = response.json()
 
 myId = "9513145b-b401-4e72-a898-a4bd7c688be8"
-permission  = "no"
+permission  = "yes"
 
 pipe = pickle.load(open('pipe11.pkl','rb'))
 

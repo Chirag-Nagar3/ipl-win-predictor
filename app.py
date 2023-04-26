@@ -85,18 +85,21 @@ if st.button('Predict Future'):
        rrr = (runs_left * 6) / balls_left
     except ZeroDivisionError:
        st.subheader("The Match is Over. You can not Predict as this Time")
-     
-    data_df = pd.DataFrame({
-        'BattingTeam':[batting_team],
-        'BowlingTeam':[bowling_team],
-        'City':[select_city],
-        'runs_left':[runs_left],
-        'balls_left':[balls_left],
-        'wickets':[wicketss],
-        'total_run_x':[target_score],
-        'crr':[crr],
-        'rrr':[rrr]
-    })
+    
+    try:
+       data_df = pd.DataFrame({
+              'BattingTeam':[batting_team],
+              'BowlingTeam':[bowling_team],
+              'City':[select_city],
+              'runs_left':[runs_left],
+              'balls_left':[balls_left],
+              'wickets':[wicketss],
+              'total_run_x':[target_score],
+              'crr':[crr],
+              'rrr':[rrr]
+      })
+    except NameError:
+       st.write(" ")
 
     # st.table(data_df)
     result = pipe.predict_proba(data_df)

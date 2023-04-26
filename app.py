@@ -24,7 +24,7 @@ response = requests.get(url, headers=headers)
 data = response.json()
 
 myId = "b72aa256-3a2f-4536-bb4f-59cdebf04557"
-
+permission  = ""
 match_id = data['data'][4]['id']
 match_name = data['data'][4]['name']
 match_city = data['data'][4]['venue']
@@ -43,17 +43,20 @@ medium_css = "font-size: 25px; color: rgb(57 67 97);"
 medium_css1 = "font-size: 24px; color: rgb(0 113 240);"
 medium_css2 = "font-size: 24px; color: rgb(246 53 53);"
 
-
-if myId == match_id:
-    st.title('IPL Win Predictor')
-    # Display the string in medium font and text color
-    st.markdown("<p style='{}'>{}</p>".format(medium_css1, "The Batting Team : " + "  " + batting_team),unsafe_allow_html=True)
-    st.markdown("<p style='{}'>{}</p>".format(medium_css1, "Current Score : " + "  " + str(current_score)),unsafe_allow_html=True)
-    st.markdown("<p style='{}'>{}</p>".format(medium_css1, "Wickets : " + "  " + str(fall_wickets)),unsafe_allow_html=True)
-    st.markdown("<p style='{}'>{}</p>".format(medium_css, "The Bowling Team : " + "  " + bowling_team),unsafe_allow_html=True)
-    st.markdown("<p style='{}'>{}</p>".format(medium_css, "Match Target : " + "  " + str(target_score)),unsafe_allow_html=True)
-    st.markdown("<p style='{}'>{}</p>".format(medium_css, "Over Completed : " + "  " + str(over_completed)),unsafe_allow_html=True)
-    select_city = st.selectbox('Select host City',sorted(cities))
+if permission == "yes":
+       if myId == match_id:
+           st.title('IPL Win Predictor')
+           # Display the string in medium font and text color
+           st.markdown("<p style='{}'>{}</p>".format(medium_css1, "The Batting Team : " + "  " + batting_team),unsafe_allow_html=True)
+           st.markdown("<p style='{}'>{}</p>".format(medium_css1, "Current Score : " + "  " + str(current_score)),unsafe_allow_html=True)
+           st.markdown("<p style='{}'>{}</p>".format(medium_css1, "Wickets : " + "  " + str(fall_wickets)),unsafe_allow_html=True)
+           st.markdown("<p style='{}'>{}</p>".format(medium_css, "The Bowling Team : " + "  " + bowling_team),unsafe_allow_html=True)
+           st.markdown("<p style='{}'>{}</p>".format(medium_css, "Match Target : " + "  " + str(target_score)),unsafe_allow_html=True)
+           st.markdown("<p style='{}'>{}</p>".format(medium_css, "Over Completed : " + "  " + str(over_completed)),unsafe_allow_html=True)
+           select_city = st.selectbox('Select host City',sorted(cities))
+elif premission == "no":
+       st.header("Match will start on 7.30 PM")
+ 
 
 
 # col1, col2 = st.columns(2)

@@ -102,4 +102,4 @@ if st.button('Predict Future'):
               st.header(batting_team + "- " + str(round(win * 100)) + "%")
               st.header(bowling_team + "- " + str(round(loss * 100)) + "%")
        except NameError:
-       st.write(" ")
+              st.write(" ")

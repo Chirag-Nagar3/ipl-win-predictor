@@ -24,7 +24,7 @@ response = requests.get(url, headers=headers)
 data = response.json()
 
 myId = "9513145b-b401-4e72-a898-a4bd7c688be8"
-permission  = "yes"
+permission  = "no"
 match_id = data['data'][6]['id']
 match_name = data['data'][6]['name']
 match_city = data['data'][6]['venue']
@@ -55,7 +55,7 @@ if permission == "yes":
            st.markdown("<p style='{}'>{}</p>".format(medium_css, "Over Completed : " + "  " + str(over_completed)),unsafe_allow_html=True)
            select_city = st.selectbox('Select host City',sorted(cities))
 elif permission == "no":
-       st.header("Match will start soon...")
+       st.header("Predition will strats from 2nd Innings")
  
 
 

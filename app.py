@@ -29,8 +29,8 @@ permission  = "yes"
 pipe = pickle.load(open('pipe11.pkl','rb'))
 
 # Define custom CSS style for medium font and text color
-medium_css = "font-size: 25px; color: rgb(219 3 0);"
-medium_css1 = "font-size: 24px; color: rgb(55 3 129);"
+medium_css = "font-size: 25px; color: rgb(55 3 129);"
+medium_css1 = "font-size: 24px; color: rgb(219 3 0);"
 medium_css2 = "font-size: 24px; color: rgb(55 3 129);"
 
 if permission == "yes":
@@ -41,8 +41,8 @@ if permission == "yes":
        current_score = data['data'][6]['score'][1]['r']
        fall_wickets = data['data'][6]['score'][1]['w']
        over_completed = data['data'][6]['score'][1]['o']
-       batting_team = data['data'][6]['teams'][1]
-       bowling_team = data['data'][6]['teams'][0]
+       batting_team = data['data'][6]['teams'][0]
+       bowling_team = data['data'][6]['teams'][1]
        if myId == match_id:
            st.title('IPL Win Predictor')
            # Display the string in medium font and text color

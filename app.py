@@ -23,8 +23,8 @@ response = requests.get(url, headers=headers)
 
 data = response.json()
 
-myId = "b72aa256-3a2f-4536-bb4f-59cdebf04557"
-permission  = "no"
+myId = "9513145b-b401-4e72-a898-a4bd7c688be8"
+permission  = "yes"
 match_id = data['data'][4]['id']
 match_name = data['data'][4]['name']
 match_city = data['data'][4]['venue']
@@ -40,8 +40,8 @@ pipe = pickle.load(open('pipe11.pkl','rb'))
 
 # Define custom CSS style for medium font and text color
 medium_css = "font-size: 25px; color: rgb(57 67 97);"
-medium_css1 = "font-size: 24px; color: rgb(0 113 240);"
-medium_css2 = "font-size: 24px; color: rgb(246 53 53);"
+medium_css1 = "font-size: 24px; color: rgb(219 3 0);"
+medium_css2 = "font-size: 24px; color: rgb(55 3 129);"
 
 if permission == "yes":
        if myId == match_id:
@@ -55,7 +55,7 @@ if permission == "yes":
            st.markdown("<p style='{}'>{}</p>".format(medium_css, "Over Completed : " + "  " + str(over_completed)),unsafe_allow_html=True)
            select_city = st.selectbox('Select host City',sorted(cities))
 elif permission == "no":
-       st.header("Match will start on 7.30 PM")
+       st.header("Match will start soon...")
  
 
 

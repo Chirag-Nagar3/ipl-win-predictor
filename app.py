@@ -54,7 +54,7 @@ if permission == "yes":
            st.markdown("<p style='{}'>{}</p>".format(medium_css, "Match Target : " + "  " + str(target_score)),unsafe_allow_html=True)
            st.markdown("<p style='{}'>{}</p>".format(medium_css, "Over Completed : " + "  " + str(over_completed)),unsafe_allow_html=True)
            select_city = st.selectbox('Select host City',sorted(cities))
-elif premission == "no":
+elif permission == "no":
        st.header("Match will start on 7.30 PM")
  
 

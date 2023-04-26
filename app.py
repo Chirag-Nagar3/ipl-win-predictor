@@ -39,7 +39,7 @@ bowling_team = data['data'][4]['teams'][0]
 pipe = pickle.load(open('pipe11.pkl','rb'))
 
 # Define custom CSS style for medium font and text color
-medium_css = "font-size: 25px; color: rgb(57 67 97);"
+medium_css = "font-size: 25px; color: rgb(55 3 129);"
 medium_css1 = "font-size: 24px; color: rgb(219 3 0);"
 medium_css2 = "font-size: 24px; color: rgb(55 3 129);"
 

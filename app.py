@@ -55,7 +55,7 @@ if permission == "yes":
            st.markdown("<p style='{}'>{}</p>".format(medium_css, "Over Completed : " + "  " + str(over_completed)),unsafe_allow_html=True)
            select_city = st.selectbox('Select host City',sorted(cities))
 elif permission == "no":
-       st.header("Predition will strats from 2nd Innings")
+       st.header("Prediction will strats from 2nd Innings")
  
 
 

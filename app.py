@@ -25,16 +25,6 @@ data = response.json()
 
 myId = "9513145b-b401-4e72-a898-a4bd7c688be8"
 permission  = "no"
-match_id = data['data'][6]['id']
-match_name = data['data'][6]['name']
-match_city = data['data'][6]['venue']
-target_score = data['data'][6]['score'][0]['r']
-current_score = data['data'][6]['score'][1]['r']
-fall_wickets = data['data'][6]['score'][1]['w']
-over_completed = data['data'][6]['score'][1]['o']
-batting_team = data['data'][6]['teams'][1]
-bowling_team = data['data'][6]['teams'][0]
-
 
 pipe = pickle.load(open('pipe11.pkl','rb'))
 
@@ -44,6 +34,15 @@ medium_css1 = "font-size: 24px; color: rgb(219 3 0);"
 medium_css2 = "font-size: 24px; color: rgb(55 3 129);"
 
 if permission == "yes":
+       match_id = data['data'][6]['id']
+       match_name = data['data'][6]['name']
+       match_city = data['data'][6]['venue']
+       target_score = data['data'][6]['score'][0]['r']
+       current_score = data['data'][6]['score'][1]['r']
+       fall_wickets = data['data'][6]['score'][1]['w']
+       over_completed = data['data'][6]['score'][1]['o']
+       batting_team = data['data'][6]['teams'][1]
+       bowling_team = data['data'][6]['teams'][0]
        if myId == match_id:
            st.title('IPL Win Predictor')
            # Display the string in medium font and text color

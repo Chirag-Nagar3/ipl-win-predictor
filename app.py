@@ -98,13 +98,11 @@ if st.button('Predict Future'):
               'crr':[crr],
               'rrr':[rrr]
       })
+       result = pipe.predict_proba(data_df)
+       loss = result[0][0]
+       win = result[0][1]
+
+       st.header(batting_team + "- " + str(round(win * 100)) + "%")
+       st.header(bowling_team + "- " + str(round(loss * 100)) + "%")
     except NameError:
        st.write(" ")
-
-    # st.table(data_df)
-    result = pipe.predict_proba(data_df)
-    loss = result[0][0]
-    win = result[0][1]
-
-    st.header(batting_team + "- " + str(round(win * 100)) + "%")
-    st.header(bowling_team + "- " + str(round(loss * 100)) + "%")

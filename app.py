@@ -81,8 +81,11 @@ if st.button('Predict Future'):
     balls_left = 120 - (over_completed * 6)
     wicketss = 10 - fall_wickets
     crr = current_score / over_completed
-    rrr = (runs_left * 6) / balls_left
-
+    try:
+       rrr = (runs_left * 6) / balls_left
+    except ZeroDivisionError:
+       st.subheader("The Match is Over. You can not Predict as this Time")
+     
     data_df = pd.DataFrame({
         'BattingTeam':[batting_team],
         'BowlingTeam':[bowling_team],

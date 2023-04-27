@@ -24,7 +24,7 @@ response = requests.get(url, headers=headers)
 data = response.json()
 
 myId = "9513145b-b401-4e72-a898-a4bd7c688be8"
-permission  = "match_start"
+permission  = "wait"
 
 pipe = pickle.load(open('pipe11.pkl','rb'))
 
@@ -82,6 +82,8 @@ if permission == "yes":
               except NameError:         
                      st.write(" ")
 elif permission == "wait":
+       st.header("37th Match • Indian Premier League 2023")
+       st.header("Chennai Super kings VS Rajasthan Royals")
        st.header("Prediction will strats from 2nd Innings")
 elif permission == "match_start":
        st.header("37th Match • Indian Premier League 2023")

@@ -84,7 +84,7 @@ if permission == "yes":
 elif permission == "wait":
        st.header("Prediction will strats from 2nd Innings")
 elif permission == "match_start":
-       st.header("36th Match • Indian Premier League 2023")
+       st.header("37th Match • Indian Premier League 2023")
        st.header("Chennai Super kings VS Rajasthan Royals")
        st.header("Match will start on 7:30 PM")
 

@@ -53,11 +53,38 @@ if permission == "yes":
            st.markdown("<p style='{}'>{}</p>".format(medium_css, "Match Target : " + "  " + str(target_score)),unsafe_allow_html=True)
            st.markdown("<p style='{}'>{}</p>".format(medium_css, "Over Completed : " + "  " + str(over_completed)),unsafe_allow_html=True)
            select_city = st.selectbox('Select host City',sorted(cities))
+       
+       if st.button('Predict Future'):
+              
+              try:
+                     
+                     runs_left = target_score - current_score
+                     balls_left = 120 - (over_completed * 6)
+                     wicketss = 10 - fall_wickets
+                     crr = current_score / over_completed
+                     rrr = (runs_left * 6) / balls_left
+                     data_df = pd.DataFrame({
+                            'BattingTeam':[batting_team],
+                            'BowlingTeam':[bowling_team],
+                            'City':[select_city],
+                            'runs_left':[runs_left],
+                            'balls_left':[balls_left],
+                            'wickets':[wicketss],
+                            'total_run_x':[target_score],
+                            'crr':[crr],
+                            'rrr':[rrr]
+                     })
+                     result = pipe.predict_proba(data_df)
+                     loss = result[0][0]
+                     win = result[0][1]
+                     st.header(batting_team + "- " + str(round(win * 100)) + "%")
+                     st.header(bowling_team + "- " + str(round(loss * 100)) + "%")
+              except NameError:         
+                     st.write(" ")
 elif permission == "wait":
        st.header("Prediction will strats from 2nd Innings")
 elif permission == "match_start":
        st.header("Match will start on 7:30 PM")
-
 
 # col1, col2 = st.columns(2)
 #
@@ -79,28 +106,28 @@ elif permission == "match_start":
 # with col5:
 #     wickets = st.number_input('Wicket Out')
 
-if st.button('Predict Future'):
-       try:
-              runs_left = target_score - current_score
-              balls_left = 120 - (over_completed * 6)
-              wicketss = 10 - fall_wickets
-              crr = current_score / over_completed
-              rrr = (runs_left * 6) / balls_left
-              data_df = pd.DataFrame({
-                     'BattingTeam':[batting_team],
-                     'BowlingTeam':[bowling_team],
-                     'City':[select_city],
-                     'runs_left':[runs_left],
-                     'balls_left':[balls_left],
-                     'wickets':[wicketss],
-                     'total_run_x':[target_score],
-                     'crr':[crr],
-                     'rrr':[rrr]
-              })
-              result = pipe.predict_proba(data_df)
-              loss = result[0][0]
-              win = result[0][1]
-              st.header(batting_team + "- " + str(round(win * 100)) + "%")
-              st.header(bowling_team + "- " + str(round(loss * 100)) + "%")
-       except NameError:
-              st.write(" ")
+# if st.button('Predict Future'):
+#        try:
+#               runs_left = target_score - current_score
+#               balls_left = 120 - (over_completed * 6)
+#               wicketss = 10 - fall_wickets
+#               crr = current_score / over_completed
+#               rrr = (runs_left * 6) / balls_left
+#               data_df = pd.DataFrame({
+#                      'BattingTeam':[batting_team],
+#                      'BowlingTeam':[bowling_team],
+#                      'City':[select_city],
+#                      'runs_left':[runs_left],
+#                      'balls_left':[balls_left],
+#                      'wickets':[wicketss],
+#                      'total_run_x':[target_score],
+#                      'crr':[crr],
+#                      'rrr':[rrr]
+#               })
+#               result = pipe.predict_proba(data_df)
+#               loss = result[0][0]
+#               win = result[0][1]
+#               st.header(batting_team + "- " + str(round(win * 100)) + "%")
+#               st.header(bowling_team + "- " + str(round(loss * 100)) + "%")
+#        except NameError:
+#               st.write(" ")

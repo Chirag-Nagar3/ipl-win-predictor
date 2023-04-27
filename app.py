@@ -24,7 +24,7 @@ response = requests.get(url, headers=headers)
 data = response.json()
 
 myId = "9513145b-b401-4e72-a898-a4bd7c688be8"
-permission  = "yes"
+permission  = "match_start"
 
 pipe = pickle.load(open('pipe11.pkl','rb'))
 
@@ -53,9 +53,10 @@ if permission == "yes":
            st.markdown("<p style='{}'>{}</p>".format(medium_css, "Match Target : " + "  " + str(target_score)),unsafe_allow_html=True)
            st.markdown("<p style='{}'>{}</p>".format(medium_css, "Over Completed : " + "  " + str(over_completed)),unsafe_allow_html=True)
            select_city = st.selectbox('Select host City',sorted(cities))
-elif permission == "no":
+elif permission == "wait":
        st.header("Prediction will strats from 2nd Innings")
- 
+elif permission == "match_start":
+       st.header("Match will start on 7:30 PM")
 
 
 # col1, col2 = st.columns(2)

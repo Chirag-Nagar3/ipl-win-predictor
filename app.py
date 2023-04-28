@@ -24,7 +24,7 @@ response = requests.get(url, headers=headers)
 data = response.json()
 
 myId = "9513145b-b401-4e72-a898-a4bd7c688be8"
-permission  = "wait"
+permission  = "match_start"
 
 pipe = pickle.load(open('pipe11.pkl','rb'))
 
@@ -32,6 +32,8 @@ pipe = pickle.load(open('pipe11.pkl','rb'))
 medium_css = "font-size: 25px; color: rgb(55 3 129);"
 medium_css1 = "font-size: 24px; color: rgb(219 3 0);"
 medium_css2 = "font-size: 24px; color: rgb(55 3 129);"
+team1_css = "font-size: 24px; color: rgb(0 87 226);"
+team2_css = "font-size: 24px; color: rgb(221 31 llll45);"
 
 if permission == "yes":
        match_id = data['data'][6]['id']
@@ -82,12 +84,16 @@ if permission == "yes":
               except NameError:         
                      st.write(" ")
 elif permission == "wait":
-       st.header("37th Match • Indian Premier League 2023")
-       st.header("Chennai Super kings VS Rajasthan Royals")
+       st.header("38th Match • Indian Premier League 2023")
+       st.markdown("<p style='{}'>{}</p>".format(team1_css, "Lacknow Super Giants"),unsafe_allow_html=True)
+       st.header("VS")
+       st.markdown("<p style='{}'>{}</p>".format(team2_css, "Punjab Kings"),unsafe_allow_html=True)
        st.header("Prediction will strats from 2nd Innings")
 elif permission == "match_start":
-       st.header("37th Match • Indian Premier League 2023")
-       st.header("Chennai Super kings VS Rajasthan Royals")
+       st.header("38th Match • Indian Premier League 2023")
+       st.markdown("<p style='{}'>{}</p>".format(team1_css, "Lacknow Super Giants"),unsafe_allow_html=True)
+       st.header("VS")
+       st.markdown("<p style='{}'>{}</p>".format(team2_css, "Punjab Kings"),unsafe_allow_html=True)
        st.header("Match will start on 7:30 PM")
 
 # col1, col2 = st.columns(2)

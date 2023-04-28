@@ -33,7 +33,7 @@ medium_css = "font-size: 25px; color: rgb(55 3 129);"
 medium_css1 = "font-size: 24px; color: rgb(219 3 0);"
 medium_css2 = "font-size: 24px; color: rgb(55 3 129);"
 team1_css = "font-size: 24px; color: rgb(0 87 226);"
-team2_css = "font-size: 24px; color: rgb(221 31 llll45);"
+team2_css = "font-size: 24px; color: rgb(221 31 45);"
 
 if permission == "yes":
        match_id = data['data'][6]['id']

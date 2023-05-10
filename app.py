@@ -29,7 +29,7 @@ permission  = "yes"
 pipe = pickle.load(open('pipe11.pkl','rb'))
 
 # Define custom CSS style for medium font and text color
-medium_css = "font-size: 25px; color: rgb(231 255 98);"
+medium_css = "font-size: 25px; color: rgb(255 202 44);"
 medium_css1 = "font-size: 24px; color: rgb(37, 97, 174);"
 medium_css2 = "font-size: 24px; color: rgb(55 3 129);"
 team1_css = "font-size: 24px; color: rgb(0 87 226);"

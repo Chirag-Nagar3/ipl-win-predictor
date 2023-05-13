@@ -36,15 +36,15 @@ team1_css = "font-size: 24px; color: rgb(0 87 226);"
 team2_css = "font-size: 24px; color: rgb(221 31 45);"
 
 if permission == "yes":
-       match_id = data['data'][4]['id']
-       match_name = data['data'][4]['name']
-       match_city = data['data'][4]['venue']
-       target_score = data['data'][4]['score'][0]['r']
-       current_score = data['data'][4]['score'][1]['r']
-       fall_wickets = data['data'][4]['score'][1]['w']
-       over_completed = data['data'][4]['score'][1]['o']
-       batting_team = data['data'][4]['teams'][1]
-       bowling_team = data['data'][4]['teams'][0]
+       match_id = data['data'][14]['id']
+       match_name = data['data'][14]['name']
+       match_city = data['data'][14]['venue']
+       target_score = data['data'][14]['score'][0]['r']
+       current_score = data['data'][14]['score'][1]['r']
+       fall_wickets = data['data'][14]['score'][1]['w']
+       over_completed = data['data'][14]['score'][1]['o']
+       batting_team = data['data'][14]['teams'][1]
+       bowling_team = data['data'][14]['teams'][0]
        if myId == match_id:
            st.title('IPL Win Predictor')
            # Display the string in medium font and text color
